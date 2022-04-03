@@ -1,6 +1,11 @@
 import React , {useState} from 'react';
+import Modal from 'react-modal';
 
 const Userdetail = () => {
+
+  const [show , setShow] = useState(false);
+  const [name , setName] = useState();
+
   
   const tempdata = [
     {id:1 , name:'Mandar' , amount:400},
@@ -28,9 +33,26 @@ const Userdetail = () => {
     </div>
   ));
 
+
   return(
     <div className='wrapper'>
-      <button>Add people</button>
+      <button onClick={() => setShow(true)}>Add people</button>
+      <Modal className='modal' isOpen={show}>
+        <div className='modal-container'>
+          <form>
+            <div className='image-container'>
+              <img onClick = {() => setShow(false)} src="https://img.icons8.com/external-flaticons-flat-flat-icons/64/000000/external-close-web-flaticons-flat-flat-icons-4.png"/>
+            </div>
+            <div className='input-container'>
+              <p>Add a friend</p>
+              <input  type="text" value={name} />
+            </div>
+          </form>
+          <div className='button-container'>
+            <button onClick = {() => setShow(false)}>Submit</button>
+          </div>
+        </div>
+      </Modal>
       <div className='container'>
         <div>{renderdata}</div>
         <div className='stats-container'>{renderstats}</div>
