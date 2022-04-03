@@ -1,0 +1,124 @@
+h1, p {
+  font-family: Lato;
+}
+
+/* #151D3B #D82148 #6EBF8B #DADBBD --color pallete*/
+
+body{
+  background-color:#151D3B;
+  color:#DADBBD ;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  height:100%;
+  width: 100%;
+  margin:0;
+  padding:0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.header h1 {
+  margin-left: 1rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.wrapper {
+ display: grid;
+ grid-template-rows: 0.1fr 1fr;
+}
+
+button {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: #DADBBD;
+  background-color: #6EBF8B;
+  font-weight: bold;
+  width: 100px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  height: 30px;
+  border-radius: 1rem;
+  margin-bottom: 1rem;
+}
+
+button:hover {
+  background-color: #D82148;
+  color: #DADBBD;
+  transition: 300ms;
+}
+
+.user-wrapper {
+  background-color: #D82148;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding:1rem;
+  border-radius: 1rem;
+  margin-bottom: 1rem;
+}
+
+.main-container {
+  width: 80vw;
+}
+
+.button-container {
+  width: 100%;
+}
+
+.userdata-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.userdata-container button {
+  background-color: #151D3B;
+  margin-bottom: 0;
+}
+
+.userdata-container button:hover {
+  background-color: #6EBF8B;
+}
+
+.user-container {
+  display: grid;
+  grid-template-columns: 2fr 2fr;
+  grid-gap: 1rem;
+}
+
+.stats-wrapper {
+  background-color: #6EBF8B;
+  font-weight: bold;
+  border-radius: 1rem;
+  padding: 0.5rem;
+}
+
+.stats-container {
+  background-color: #6EBF8B;
+  border-radius: 1rem;
+  display: grid;
+  grid-template-columns: 2fr 2fr;
+}
+
+.stats-detail {
+  display: grid;
+  background-color: #DADBBD;
+  color: #151D3B;
+  padding:1rem;
+  border-radius: 1rem;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1rem;
+}
