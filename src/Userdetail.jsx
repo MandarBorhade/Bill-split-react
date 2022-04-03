@@ -4,7 +4,7 @@ import Modal from 'react-modal';
 const Userdetail = () => {
 
   const [show , setShow] = useState(false);
-  const [name , setName] = useState();
+  const [names , setNames] = useState();
 
   
   const tempdata = [
@@ -45,7 +45,7 @@ const Userdetail = () => {
             </div>
             <div className='input-container'>
               <p>Add a friend</p>
-              <input  type="text" value={name} />
+              <input  type="text"/>
             </div>
           </form>
           <div className='button-container'>
