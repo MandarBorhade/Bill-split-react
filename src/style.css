@@ -1,10 +1,8 @@
-h1, p {
-  font-family: Lato;
-}
 
-/* #151D3B #D82148 #6EBF8B #DADBBD --color pallete*/
 
-body{
+/* bg - #151D3B #D82148 #6EBF8B #DADBBD --color pallete*/
+
+/* body{
   background-color:#151D3B;
   color:#DADBBD ;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -107,6 +105,8 @@ button:hover {
   border-radius: 1rem;
   display: grid;
   grid-template-columns: 2fr 2fr;
+  margin:0;
+  padding:0;
 }
 
 .stats-detail {
@@ -201,4 +201,41 @@ input {
   width: 30px;
   padding-right: 1rem;
   cursor: pointer;
+} */
+
+
+
+/************* Style V1 **********************/
+
+/* bg - #151D3B red - #D82148 green - #6EBF8B white - #DADBBD --color pallete*/
+
+body {
+  background-color: #151D3B;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color:whitesmoke;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  background-color: #6EBF8B;
+  font-weight: bold;
+  width: 100px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  height: 30px;
+  border-radius: 1rem;
+  margin-bottom: 1rem;
+}
+
+button:hover {
+  background-color: #D82148;
+  color: whitesmoke;
+  transition: 0.3s;
 }

@@ -6,9 +6,9 @@ const Userdetail = () => {
 
   const [showAddPeople , setShowAddPeople] = useState(false);
   const [showAddAmount , setShowAddAmount] = useState(false);
-  const [names , setNames] = useState([]);
+  const [userDetails , setUserDetails] = useState([]);
   const [username , setUsername] = useState();
-  const [amount , setAmount] = useState(0);
+  const [amount , setAmount] = useState('');
 
   
  
@@ -30,12 +30,12 @@ const Userdetail = () => {
     const unique_id = uuid();
     console.log(unique_id);
     const newUser = {id:unique_id , userName:username , userAmount:amount}
-    setNames([...names , newUser]);
+    setUserDetails([...userDetails , newUser]);
     setShowAddPeople(false);
     setUsername('')
   }
 
-  const renderdata = names.map((item) => (
+  const renderdata = userDetails.map((item) => (
     <div className='user-wrapper'>
       <div className='userdata-container'>
         <span>{item.userName}</span>
@@ -66,11 +66,11 @@ const Userdetail = () => {
   ));
 
   const renderstats = 
-  names.map((item)=> (
+  userDetails.map((item)=> (
     <div className='stats-wrapper'>
       <div className='stats-detail'>
         <span>{item.userName}</span>
-        <span>Total amount : ${item.userAmount}</span>
+        {item.userAmount === '' ? <span>Total amount : $0</span> : <span>Total amount : ${item.userAmount}</span>}
       </div>
     </div>
   ));
@@ -98,8 +98,7 @@ const Userdetail = () => {
       </Modal>
       <div className='container'>
         <div>{renderdata}</div> 
-        {names.length === 0 ? null : <div className='stats-container'>{renderstats}</div>}
-        
+        {userDetails.length === 0 ? null : <div className='stats-container'>{renderstats}</div>}
       </div>
     </div>
   )
