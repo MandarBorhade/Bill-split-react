@@ -4,7 +4,8 @@ import Modal from 'react-modal';
 const Userdetail = () => {
 
   const [show , setShow] = useState(false);
-  const [names , setNames] = useState();
+  const [names , setNames] = useState([]);
+  const [username , setUsername] = useState();
 
   
   const tempdata = [
@@ -15,7 +16,7 @@ const Userdetail = () => {
     {id:1 , name:'Indra' , amount:400},
   ]
 
-  const renderdata = tempdata.map((item) => (
+  const renderdata = names.map((item) => (
     <div className='user-wrapper'>
       <div className='userdata-container'>
         <span>{item.name}</span>
@@ -24,7 +25,7 @@ const Userdetail = () => {
     </div>
   ));
 
-  const renderstats = tempdata.map((item)=> (
+  const renderstats = names.map((item)=> (
     <div className='stats-wrapper'>
       <div className='stats-detail'>
         <span>{item.name}</span>
@@ -32,6 +33,20 @@ const Userdetail = () => {
       </div>
     </div>
   ));
+
+  const handlesubmit = (e) => {
+    e.preventDefault();
+    const newUser = {id:Math.random() , name:username , amount:400}
+    setNames([...names , newUser]);
+    setShow(false);
+    setUsername('')
+  }
+
+
+
+  const handleusernamechange = (e) => {
+    setUsername(e.target.value);
+  }
 
 
   return(
@@ -45,11 +60,11 @@ const Userdetail = () => {
             </div>
             <div className='input-container'>
               <p>Add a friend</p>
-              <input  type="text"/>
+              <input value={username} type="text" onChange={handleusernamechange}/>
             </div>
           </form>
           <div className='button-container'>
-            <button onClick = {() => setShow(false)}>Submit</button>
+            <button type='Submit' onClick = {handlesubmit}>Submit</button>
           </div>
         </div>
       </Modal>
