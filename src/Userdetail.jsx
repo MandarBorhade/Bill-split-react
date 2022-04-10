@@ -62,6 +62,8 @@ const Userdetail = () => {
           </div>
         </Modal>
       </div>
+      {item.userAmount === '' ? <div className='amount-display'>Total Amount : $0</div> : <div className='amount-display'>Total Amount : ${item.userAmount}</div>}
+      
     </div>
   ));
 
@@ -96,10 +98,7 @@ const Userdetail = () => {
           </div>
         </div>
       </Modal>
-      <div className='container'>
-        <div>{renderdata}</div> 
-        {userDetails.length === 0 ? null : <div className='stats-container'>{renderstats}</div>}
-      </div>
+        <div className='container'>{renderdata}</div> 
     </div>
   )
 }
